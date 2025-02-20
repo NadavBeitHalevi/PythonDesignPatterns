@@ -51,3 +51,5 @@ p.save_to_file(j, file)
 # verify!
 with open(file) as fh:
     print(fh.read())
+
+p.delete_file(file)
