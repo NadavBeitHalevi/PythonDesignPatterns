@@ -37,14 +37,19 @@ class Research:
 
     def __init__(self, relationships):
         # high-level: find all of john's children
+        # sepregated from high-level module, so it can be changed without affecting the high-level module
+        res = relationships.find_all_children_of("John")
+        print(f'John has children called: {", ".join(res)}.')
+        
+        # still a problem, because we are tightly coupled to the relationships class
         relations = relationships.relations
         for r in relations:
             if r[0].name == 'John' and r[1] == Relationship.PARENT:
                 print(f'John has a child called {r[2].name}.')
 
-    def __init__(self, browser):
-        for p in browser.find_all_children_of("John"):
-            print(f'John has a child called {p}')
+    # def __init__(self, browser):
+    #     for p in browser.find_all_children_of("John"):
+    #         print(f'John has a child called {p}')
 
 
 parent = Person('John')
