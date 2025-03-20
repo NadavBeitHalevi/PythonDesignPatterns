@@ -16,6 +16,23 @@ class HotDrinkFactory(ABC):
     def prepare(self, amount):
         pass
 
+        class TeaFactory(HotDrinkFactory):
+            def prepare(self, amount):
+                print(f'Put in tea bag, boil water, pour {amount}ml, add lemon')
+                return Tea()
+
+        class CoffeeFactory(HotDrinkFactory):
+            def prepare(self, amount):
+                print(f'Grind some beans, boil water, pour {amount}ml, add cream and sugar')
+                return Coffee()
+
+        def make_drink(type):
+            if type == 'tea':
+                return TeaFactory().prepare(200)
+            elif type == 'coffee':
+                return CoffeeFactory().prepare(50)
+            else:
+                return None
 # ===
 from unittest import TestCase
 
