@@ -65,9 +65,8 @@ def sort_items_by_name(items):
     return sorted(items, key=lambda x: x['name'])
 
 if __name__ == '__main__':
-    # create_db()
-    # app.run(debug=True)
-    
+
+    # the below are some quesiton for interview
     print(create_dict_from_list([1, 2, 3], ['a', 'b', 'c']))
     print(sort_items_by_name([{'name': 'Item3'}, {'name': 'Item1'}, {'name': 'Item2'}]))
     print(reverse_string('hello'))
