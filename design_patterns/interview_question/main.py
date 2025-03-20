@@ -72,3 +72,4 @@ if __name__ == '__main__':
     print(sort_items_by_name([{'name': 'Item3'}, {'name': 'Item1'}, {'name': 'Item2'}]))
     print(reverse_string('hello'))
     print(square_numbers([1, 2, 3, 4, 5]))
+    print("Hello, World!")
